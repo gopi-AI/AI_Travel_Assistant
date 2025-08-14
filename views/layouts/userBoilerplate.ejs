@@ -26,13 +26,17 @@
     <script src="/js/script.js"></script>
     <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
 
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  chat-title="airbnb"
-  agent-id="fab0e5c5-7567-4765-a2d2-568be4b11886"
-  language-code="en" max-query-length="-1">
-</df-messenger>
 
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger
+  project-id="airbnb-vwlp"
+  agent-id="fab0e5c5-7567-4765-a2d2-568be4b11886"
+  language-code="en"
+  max-query-length="-1">
+  <df-messenger-chat-bubble
+   chat-title="vyuma agent">
+  </df-messenger-chat-bubble>
+</df-messenger>
 <style>
   df-messenger {
     z-index: 999;
