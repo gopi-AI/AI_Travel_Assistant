@@ -22,21 +22,61 @@
         <%- body %>
     </div>
     <%- include("../includes/footer.ejs") %>
+
+<!-- In your <head> tag -->
 <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/08/21/04/20250821042445-MFIFAB7M.js" defer></script>
+<style>
+  #webchat .bpWebchat {
+    position: unset;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  #webchat .bpFab {
+    display: none;
+  }
+</style>
+
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 500px; height: 500px;"></div>
+
+<!-- In your <body> tag -->
 <script>
-  window.botpressWebChat.init({
-    
-    "clientId": "80302285-cb73-41fa-a813-6fb2adafb2f5",
-    
-    "hideWidget": false,          // show chat bubble
-    "hideConversation": true,     // keep window closed by default
-    "showCloseButton": true,
-    "useSessionStorage": true,
-    "showPoweredBy": false
-   
-  })
+  window.botpress.on("webchat:ready", () => {
+    window.botpress.open();
+  });
+  window.botpress.init({
+  "botId": "437c2aef-bdf0-4090-bcab-f90dde5552db",
+  "configuration": {
+    "version": "v1",
+    "composerPlaceholder": "Welcome to Myairbnb, Travel far enough, you will meet yourself.",
+    "botName": "MyAirBnB",
+    "botDescription": "Travel far enough, you will meet yourself.",
+    "fabImage": "https://files.bpcontent.cloud/2025/08/21/05/20250821055345-N3BPF6QP.png",
+    "website": {
+      "title": "https://ai-travel-assistant-k67r.onrender.com/listings",
+      "link": "https://ai-travel-assistant-k67r.onrender.com/listings"
+    },
+    "email": {},
+    "phone": {},
+    "termsOfService": {},
+    "privacyPolicy": {},
+    "color": "#ff0808",
+    "variant": "solid",
+    "headerVariant": "glass",
+    "themeMode": "light",
+    "fontFamily": "ABeeZee",
+    "radius": 4,
+    "feedbackEnabled": true,
+    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
+  },
+  "clientId": "80302285-cb73-41fa-a813-6fb2adafb2f5",
+  "selector": "#webchat"
+});
 </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="/js/script.js"></script>
 </body>
