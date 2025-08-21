@@ -30,8 +30,7 @@
   }
 </style>
 
-<!-- Put this on your page BEFORE the script below -->
-<div id="webchat" style="width: 500px; height: 500px;"></div>
+
 
 
 
@@ -45,6 +44,8 @@
     <%- include("../includes/footer.ejs") %>
 
 <!-- In your <body> tag -->
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 500px; height: 500px;"></div>
 <script>
   window.botpress.on("webchat:ready", () => {
     window.botpress.open();
